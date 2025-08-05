@@ -59,6 +59,9 @@ main/
 ├── public/
 ├── src/
 │   └── app/
+│       └── api/
+│           └── mood/
+│               └── route.ts
 ├── .env
 ├── .gitignore
 ├── package.json
@@ -82,5 +85,32 @@ main/
 5. **Date Handling**: Day.js برای مدیریت تاریخ
 
 ---
+
+## 📅 **روز دوم - توسعه Feature Mood**
+
+### ✅ **انجام شده:**
+1. **ساختار پوشه**: پوشه `src/features/mood/api/` ساخته شد
+2. **طراحی دیتابیس**: 
+   - فایل `prisma/schema.prisma` ایجاد شد
+   - مدل‌های `User` و `DailyLog` تعریف شدند
+   - Migration با نام `add_mood_tables` اجرا شد
+3. **API Route**: 
+   - فایل `src/app/api/mood/route.ts` ایجاد شد
+   - Endpoint های POST و GET پیاده‌سازی شدند
+4. **تست API**: 
+   - با Postman تست شد
+   - User اول در Prisma Studio ایجاد شد
+   - API با موفقیت کار می‌کند
+5. **Git Management**: 
+   - برنچ `day2` ایجاد شد
+   - تغییرات commit و push شدند
+
+### 🔄 **باقی‌مانده:**
+- ساخت UI Components
+- اضافه کردن SVG ها
+- پیاده‌سازی MoodPage
+- استایل‌دهی
+
+---
 **تاریخ تکمیل**: امروز  
-**وضعیت**: ✅ آماده برای توسعه 
+**وضعیت**: ✅ API و دیتابیس آماده، UI باقی‌مانده 

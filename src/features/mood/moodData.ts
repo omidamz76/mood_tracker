@@ -2,7 +2,7 @@
 export interface Emoji {
   id: number;
   label: string;
-  svg: string;
+  emoji: string;
   value: string;
 }
 
@@ -15,36 +15,11 @@ export interface Mood {
   createdAt: Date;
 }
 
-// لیست اموجی‌ها
+// لیست اموجی‌ها با کد یونیکد
 export const emojis: Emoji[] = [
-  { 
-    id: 1, 
-    label: "Rad", 
-    svg: "/rad.svg",
-    value: "rad"
-  },
-  { 
-    id: 2, 
-    label: "Good", 
-    svg: "/good.svg",
-    value: "good"
-  },
-  { 
-    id: 3, 
-    label: "Meh", 
-    svg: "/meh.svg",
-    value: "meh"
-  },
-  { 
-    id: 4, 
-    label: "Bad", 
-    svg: "/bad.svg",
-    value: "bad"
-  },
-  { 
-    id: 5, 
-    label: "Awful", 
-    svg: "/awful.svg",
-    value: "awful"
-  },
+  { id: 1, label: "Rad", emoji: "\uD83E\uDD29", value: "rad" }, // 🤩
+  { id: 2, label: "Good", emoji: "\uD83D\uDE0A", value: "good" }, // 😊
+  { id: 3, label: "Meh", emoji: "\uD83D\uDE10", value: "meh" }, // 😐
+  { id: 4, label: "Bad", emoji: "\uD83D\uDE1E", value: "bad" }, // 😞
+  { id: 5, label: "Awful", emoji: "\uD83D\uDE2D", value: "awful" }, // 😭
 ];

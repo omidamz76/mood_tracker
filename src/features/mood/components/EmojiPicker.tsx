@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { emojis, Emoji } from '../moodData';
 
 interface EmojiPickerProps {
@@ -10,22 +11,29 @@ interface EmojiPickerProps {
 
 export default function EmojiPicker({ onSelect, selectedEmoji }: EmojiPickerProps) {
   return (
-    <div className="grid grid-cols-5 gap-4 p-4">
+    <div className="grid grid-cols-5 gap-3 p-4">
       {emojis.map((emoji) => (
-        <button
+        <Card 
           key={emoji.id}
-          onClick={() => onSelect(emoji)}
-          className={`p-4 rounded-lg transition-all duration-200 hover:scale-105 ${
+          className={`cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg ${
             selectedEmoji?.id === emoji.id
-              ? 'bg-blue-100 border-2 border-blue-500'
-              : 'bg-gray-50 hover:bg-gray-100'
+              ? 'ring-2 ring-blue-500 bg-blue-50'
+              : 'hover:bg-gray-50'
           }`}
+          onClick={() => onSelect(emoji)}
         >
-          <div className="flex flex-col items-center space-y-2">
-            <img src={emoji.svg} alt={emoji.label} className="w-12 h-12" />
-            <span className="text-sm font-medium text-gray-700">{emoji.label}</span>
-          </div>
-        </button>
+          <CardContent className="p-3 flex flex-col items-center space-y-2">
+            <div className="text-4xl">
+              {emoji.emoji}
+            </div>
+            <Badge 
+              variant={selectedEmoji?.id === emoji.id ? "default" : "secondary"}
+              className="text-xs"
+            >
+              {emoji.label}
+            </Badge>
+          </CardContent>
+        </Card>
       ))}
     </div>
   );
